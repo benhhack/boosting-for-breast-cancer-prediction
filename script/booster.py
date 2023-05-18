@@ -36,10 +36,11 @@ def main():
     print("Standard Deviation: {:.2f} %".format(accuracies.std() * 100))
 
     # confusion matrix creation
-    from sklearn.metrics import confusion_matrix, accuracy_score
+    from sklearn.metrics import confusion_matrix, accuracy_score, f1_score
     y_pred = classifier.predict(X_test)
     cm = confusion_matrix(y_test, y_pred)
     print(cm)
+    print("F1 Score: {:.3f}".format(f1_score(y_test, y_pred)))
     accuracy_score(y_test, y_pred)
     print("Test Accuracy {:.4f}".format(accuracy_score(y_test, y_pred)))
 
